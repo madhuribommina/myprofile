@@ -1,0 +1,124 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: black;
+   
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.profile{
+    position: relative;
+    height: 500px;
+    width: 400px; 
+}
+.profile::after,
+.profile::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgb(255, 115, 0),red);
+    transform: scale(1.02);
+    z-index: -1;
+    filter: blur(20px);
+    animation: animate 20s linear infinite;
+}
+@keyframes animate{
+    0%{background-position: 0% 0%;}
+    50%{background-position: 300% 0%;}
+    100%{background-position: 0% 0%;}
+}
+
+.profile img{
+    height: 500px;
+    width: 400px;
+    filter: grayscale(60%);
+    border-radius: 10px;
+}
+.icons{
+    position: absolute;
+    top: 70%;
+    opacity: 0;
+    border-radius:0 10px 0 0;
+    padding: 5px 10px 5px 0;
+    background-color: grey;
+    transition: 6s;
+}
+.icons .fa-instagram{
+    margin-left: 10px;
+    font-size: 40px;
+    color: honeydew;
+    opacity: 0;
+}
+.icons .fa-linkedin{
+    margin-left: 10px;
+    font-size: 40px;
+    color: honeydew;
+    opacity: 0;
+}
+.profile:hover .icons{
+    opacity: 1;
+    
+}
+.profile:hover .icons .fa-instagram{
+    opacity: 1;
+}
+.profile:hover .icons .fa-linkedin{
+    opacity: 1;
+}
+.icons .fa-instagram:hover{
+    background: linear-gradient(#405DE6,#5851DB,#833AB4,#C13584,#E1306C,#FD1D1D);
+    transition: 2s;
+}
+.icons .fa-linkedin:hover{
+color: #0077B5;
+transition: 2s;
+}
+.info{
+    position: absolute;
+    top: 85%;
+    width: 100%;
+    background: grey;
+    bottom: 0;
+    text-align: center;
+    margin-left: 0 25% 25% 0;
+    border-radius: 50px 50px 0 0;
+    opacity: 0;
+    transition: 1.5s;
+}
+.profile:hover .info{
+    opacity: 1;
+}
+ h4{
+    letter-spacing: 1px;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-family: 'Langar', cursive;
+    transition: 3s;
+}
+p{
+    transition: 4s;
+    margin-top: -10px;
+}
+ h4, p{
+    opacity: 0;
+}
+.profile:hover  h4{
+    opacity: 1;
+    transform: translateX(30px);
+}
+
+.profile:hover  p{
+    opacity: 1;
+    transform: translateX(-20px);
+}
+
